@@ -1,0 +1,85 @@
+{
+  "pillar": "Human Resources",
+  "name": "Signed Employment Contract",
+  "objective": "Extract final agreed salary metrics, start dates, notice periods, and restrictive covenants.",
+  "attributes": [
+    {
+      "name": "Employee Full Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the employee's legal full name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Employer / Company",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the employing company name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Job Title",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the agreed job title.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Department",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the department/team.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Start Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the employment start date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Employment Type",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify as Full-time, Part-time, Contract or Temporary.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Base Salary",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the agreed base salary amount.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Salary Currency / Frequency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the salary currency and pay frequency.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Bonus / Variable Pay",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise bonus, commission or variable pay terms.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Notice Period",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the termination notice period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Probation Period",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the probation period length.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Restrictive Covenants",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise non-compete / non-solicit restrictive covenants.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Signature Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date the contract was signed.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

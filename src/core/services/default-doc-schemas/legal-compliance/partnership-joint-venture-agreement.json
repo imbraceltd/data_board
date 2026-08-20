@@ -1,0 +1,97 @@
+{
+  "pillar": "Legal & Compliance",
+  "name": "Partnership / Joint Venture Agreement",
+  "objective": "Map asset contribution grids, revenue-share metrics, intellectual property allocations, and exit triggers.",
+  "attributes": [
+    {
+      "name": "Agreement Title",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the agreement title.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Partner A",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the first partner's legal name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Partner B",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the second partner's legal name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Effective Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the effective date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "JV Entity Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the joint venture entity name, if formed.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Capital Contributions",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each partner's contribution: partner, asset/cash, value, ownership %.",
+      "roleAccess": "Manager (Level 3)",
+      "columns": [
+        {
+          "name": "Partner",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Contribution",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Value",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Ownership %",
+          "aiLogic": "Number"
+        }
+      ]
+    },
+    {
+      "name": "Revenue Share Split",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the revenue/profit-sharing arrangement.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "IP Allocation",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise intellectual property ownership/allocation.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Management / Governance",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise governance and decision rights.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Exit Triggers",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise exit, buyout and dissolution triggers.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Governing Law",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the governing law / jurisdiction.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Signatories",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract signatory names and titles.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

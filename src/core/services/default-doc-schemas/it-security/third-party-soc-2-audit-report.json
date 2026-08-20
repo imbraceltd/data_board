@@ -1,0 +1,81 @@
+{
+  "pillar": "IT & Security",
+  "name": "Third-Party SOC 2 Audit Report",
+  "objective": "Map external vendor data security control frameworks, trust principle validations, and noted operational exceptions.",
+  "attributes": [
+    {
+      "name": "Vendor Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the audited vendor/service organisation name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Report Type",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify the report (SOC 2 Type I, SOC 2 Type II).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Auditor / CPA Firm",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the auditing firm name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Audit Period Start",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the start of the audit period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Audit Period End",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the end of the audit period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Trust Principles Covered",
+      "aiLogic": "MultipleSelection",
+      "extractionPrompt": "Extract trust service criteria covered (Security, Availability, Confidentiality, Processing Integrity, Privacy).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Opinion",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify the auditor opinion (Unqualified, Qualified, Adverse, Disclaimer).",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Noted Exceptions",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each noted control exception: control area, description, severity.",
+      "roleAccess": "Manager (Level 3)",
+      "columns": [
+        {
+          "name": "Control Area",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Severity",
+          "aiLogic": "ShortText"
+        }
+      ]
+    },
+    {
+      "name": "Number of Exceptions",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the total count of noted exceptions.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Report File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the SOC 2 report.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

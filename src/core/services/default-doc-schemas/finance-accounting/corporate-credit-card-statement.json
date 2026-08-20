@@ -1,0 +1,97 @@
+{
+  "pillar": "Finance & Accounting",
+  "name": "Corporate Credit Card Statement",
+  "objective": "Automatically group external merchant transaction rows, cardholder keys, transaction categories, and total dues.",
+  "attributes": [
+    {
+      "name": "Card Issuer",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the card issuer/bank name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Cardholder Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the cardholder name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Card Number (Last 4)",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the last 4 digits of the card.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Statement Period",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the statement period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Statement Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the statement date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Payment Due Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the payment due date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Previous Balance",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the previous balance.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "New Charges",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total new charges.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Amount Due",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total amount due.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Minimum Payment",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the minimum payment due.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Transactions",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each charge: date, merchant, category, amount.",
+      "roleAccess": "Manager (Level 3)",
+      "columns": [
+        {
+          "name": "Date",
+          "aiLogic": "Date"
+        },
+        {
+          "name": "Merchant",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Category",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Amount",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Statement File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the card statement.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

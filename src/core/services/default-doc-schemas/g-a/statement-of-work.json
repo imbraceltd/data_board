@@ -1,0 +1,97 @@
+{
+  "pillar": "G&A",
+  "name": "Statement of Work (SOW)",
+  "objective": "Extract project milestones, deliverable descriptions, and payment timelines.",
+  "attributes": [
+    {
+      "name": "SOW Title / Reference",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the SOW title or reference number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Parent Agreement",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the parent MSA/contract this SOW is issued under.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Client",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the client/customer name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Vendor / Provider",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the provider/vendor name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Project Start Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the project start date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Project End Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the project end / target completion date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Project Description",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the overall project scope and objectives.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Line Items",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each deliverable/milestone as a row with description, quantity, unit price and amount.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Quantity",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Unit Price",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Amount",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Total Project Value",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total contract value of the SOW.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Payment Schedule",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the payment/billing schedule tied to milestones.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Acceptance Criteria",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the deliverable acceptance criteria.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Project Manager",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the named project manager / point of contact.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "pillar": "Legal & Compliance",
+  "name": "Data Privacy / GDPR Breach Notice",
+  "objective": "Parse external data exposure claims, affected individual counts, regulatory timelines, and liability risks.",
+  "attributes": [
+    {
+      "name": "Reporting Entity",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the entity reporting/notifying the breach.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Breach Reference",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the breach incident reference number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Date of Breach",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date the breach occurred.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Date Discovered",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date the breach was discovered.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Date Reported",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date the breach was reported to the regulator.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Affected Individuals Count",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the number of affected data subjects.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Data Categories Exposed",
+      "aiLogic": "MultipleSelection",
+      "extractionPrompt": "Extract the categories of personal data exposed.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Breach Description",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise how the breach occurred.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Regulator Notified",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract which regulator/authority was notified.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Notification Deadline",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the regulatory notification deadline (e.g. 72h).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Remediation Actions",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the remediation/mitigation actions taken.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Estimated Liability Risk",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the estimated financial/penalty exposure.",
+      "roleAccess": "Director (Level 4)"
+    }
+  ]
+}

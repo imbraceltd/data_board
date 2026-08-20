@@ -1,0 +1,79 @@
+{
+  "pillar": "Human Resources",
+  "name": "Employee Onboarding Form",
+  "objective": "Capture personal contact parameters, emergency contacts, and banking remittance setups.",
+  "attributes": [
+    {
+      "name": "Employee Full Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the employee's full legal name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Personal Email",
+      "aiLogic": "Email",
+      "extractionPrompt": "Extract the employee's personal email address.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Phone Number",
+      "aiLogic": "Phone",
+      "extractionPrompt": "Extract the employee's contact phone number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Home Address",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract the residential address.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Date of Birth",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date of birth.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Nationality",
+      "aiLogic": "Country",
+      "extractionPrompt": "Extract the nationality / country of citizenship.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Emergency Contact Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the emergency contact's name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Emergency Contact Phone",
+      "aiLogic": "Phone",
+      "extractionPrompt": "Extract the emergency contact's phone number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Bank Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the bank name for salary remittance.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Bank Account Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the bank account number.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Tax / Social Security ID",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the tax or social security identifier.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Start Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the confirmed start date.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

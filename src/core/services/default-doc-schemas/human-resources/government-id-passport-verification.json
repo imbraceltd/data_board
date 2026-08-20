@@ -1,0 +1,73 @@
+{
+  "pillar": "Human Resources",
+  "name": "Government ID / Passport Verification",
+  "objective": "Validate document expiry dates, citizen status parameters, and legal full names.",
+  "attributes": [
+    {
+      "name": "Document Type",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify the document (Passport, National ID, Driver's License, Residence Permit).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Legal Full Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the legal full name as printed.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Document Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the document / passport number.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Date of Birth",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the holder's date of birth.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Nationality",
+      "aiLogic": "Country",
+      "extractionPrompt": "Extract the nationality / issuing country.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Issue Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the document issue date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Expiry Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the document expiry date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Place of Issue",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the place / authority of issue.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Citizen Status",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify residency/citizen status (Citizen, Permanent Resident, Work Permit, Other).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Document Scan",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the scanned ID document.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Verification Status",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify verification outcome (Verified, Pending, Rejected).",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

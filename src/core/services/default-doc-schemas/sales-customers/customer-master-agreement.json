@@ -1,0 +1,79 @@
+{
+  "pillar": "Sales & Customers",
+  "name": "Customer Master Agreement (CMA)",
+  "objective": "Parse client-facing legal frameworks, standard commercial rules, liability caps, and renewal structures.",
+  "attributes": [
+    {
+      "name": "Agreement Title",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the agreement title.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Customer",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the customer/counterparty name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Our Entity",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract our contracting entity name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Effective Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the effective date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Initial Term",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the initial term.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Renewal Structure",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the renewal / auto-renew provisions.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Commercial Terms",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the standard commercial rules (pricing, billing).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Liability Cap",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the limitation of liability cap.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Indemnification",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise indemnification obligations.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Termination Terms",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise termination rights and notice.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Governing Law",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the governing law / jurisdiction.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Signatories",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract signatory names and titles.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

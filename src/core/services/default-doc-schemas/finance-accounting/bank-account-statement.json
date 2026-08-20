@@ -1,0 +1,97 @@
+{
+  "pillar": "Finance & Accounting",
+  "name": "Bank Account Statement",
+  "objective": "Parse institutional transaction histories, starting/ending balances, interest earned, and service fees.",
+  "attributes": [
+    {
+      "name": "Bank Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the issuing bank name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Account Holder",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the account holder name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Account Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the (masked) account number.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Statement Period",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the statement period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Opening Balance",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the opening/starting balance.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Closing Balance",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the closing/ending balance.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Credits",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total credits/deposits in the period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Debits",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total debits/withdrawals in the period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Interest Earned",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract interest earned in the period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Service Fees",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract bank service/maintenance fees.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Transactions",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each transaction: date, description, debit, credit, balance.",
+      "roleAccess": "Manager (Level 3)",
+      "columns": [
+        {
+          "name": "Date",
+          "aiLogic": "Date"
+        },
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Amount",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Balance",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Statement File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the bank statement file.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

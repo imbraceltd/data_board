@@ -1,0 +1,118 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1777388302968,
+      "tag": "0000_volatile_norman_osborn",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1777388675969,
+      "tag": "0001_partition_board_items",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1778544000000,
+      "tag": "0002_add_boards_attached_from",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1779120000000,
+      "tag": "0003_add_crmboards",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1779126000000,
+      "tag": "0004_add_schedulers",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1779079536921,
+      "tag": "0005_curved_lilith",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1779200000000,
+      "tag": "0006_doc_schema_versions",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1779400000000,
+      "tag": "0007_boards_from_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1779500000000,
+      "tag": "0008_doc_schema_versions_created_by_name",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1779600000000,
+      "tag": "0009_doc_categories_type",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1779700000000,
+      "tag": "0010_backfill_boards_from_schema_id",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1779800000000,
+      "tag": "0011_boards_category",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1779900000000,
+      "tag": "0012_backfill_doc_schemas_from_documentai_boards",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1780000000000,
+      "tag": "0013_session_expires_at_bigint",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1780100000000,
+      "tag": "0014_doc_schemas_description",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1780200000000,
+      "tag": "0015_documentai_boards_to_general",
+      "breakpoints": true
+    }
+  ]
+}

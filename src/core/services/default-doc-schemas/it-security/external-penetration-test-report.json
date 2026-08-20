@@ -1,0 +1,91 @@
+{
+  "pillar": "IT & Security",
+  "name": "External Penetration Test Report",
+  "objective": "Index independent cybersecurity infrastructure scans, discovered system vulnerability counts, CVE rankings, and fix steps.",
+  "attributes": [
+    {
+      "name": "Testing Vendor",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the penetration testing firm name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Test Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date(s) testing was performed.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Scope",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the systems / assets in scope.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Critical Findings",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the count of critical-severity findings.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "High Findings",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the count of high-severity findings.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Medium Findings",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the count of medium-severity findings.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Low Findings",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the count of low-severity findings.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Vulnerabilities",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each finding: title, CVE/CVSS, severity, affected asset, remediation.",
+      "roleAccess": "Manager (Level 3)",
+      "columns": [
+        {
+          "name": "Title",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "CVE / CVSS",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Severity",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Remediation",
+          "aiLogic": "ShortText"
+        }
+      ]
+    },
+    {
+      "name": "Overall Risk Rating",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify overall risk (Critical, High, Medium, Low).",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Retest Required",
+      "aiLogic": "Checkbox",
+      "extractionPrompt": "Indicate whether a retest is required.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Report File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the full pentest report.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

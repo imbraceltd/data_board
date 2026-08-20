@@ -1,0 +1,79 @@
+{
+  "pillar": "Human Resources",
+  "name": "Interview Assessment Scorecard",
+  "objective": "Extract structured technical ratings, competency scores, culture-fit parameters, and consensus.",
+  "attributes": [
+    {
+      "name": "Candidate Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the candidate's name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Position Applied",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the role the candidate interviewed for.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Interview Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date of the interview.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Interviewer",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the interviewer's name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Interview Round",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify the round (Phone Screen, Technical, Onsite, Final).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Technical Rating",
+      "aiLogic": "Rating",
+      "extractionPrompt": "Extract the technical competency rating (1-5).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Communication Rating",
+      "aiLogic": "Rating",
+      "extractionPrompt": "Extract the communication rating (1-5).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Culture Fit Rating",
+      "aiLogic": "Rating",
+      "extractionPrompt": "Extract the culture-fit rating (1-5).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Strengths",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the candidate's noted strengths.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Concerns",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the noted concerns or weaknesses.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Overall Recommendation",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify the recommendation (Strong Hire, Hire, No Hire, Strong No Hire).",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Consensus Notes",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the panel consensus.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

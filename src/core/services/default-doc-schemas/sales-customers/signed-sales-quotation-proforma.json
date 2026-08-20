@@ -1,0 +1,103 @@
+{
+  "pillar": "Sales & Customers",
+  "name": "Signed Sales Quotation / Proforma",
+  "objective": "Match customer-executed price sheets, project scope sign-offs, total contract values, and order dates.",
+  "attributes": [
+    {
+      "name": "Quotation Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the quotation/proforma reference number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Customer Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the customer name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Quotation Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the quotation date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Valid Until",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the quotation validity expiry date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Line Items",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each quoted line: description, quantity, unit price, amount.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Quantity",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Unit Price",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Amount",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Subtotal",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the subtotal.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Discount",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract any discount applied.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Tax",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the tax amount.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Contract Value",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total quoted contract value.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the quotation currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Scope of Work",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the quoted scope of work.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Customer Signed",
+      "aiLogic": "Checkbox",
+      "extractionPrompt": "Indicate whether the customer has signed/executed it.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Signature Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the customer sign-off date.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "pillar": "Finance & Accounting",
+  "name": "Audited Corporate Balance Sheet",
+  "objective": "Parse multi-year asset distributions, liability frameworks, and equity structures into nested grids.",
+  "attributes": [
+    {
+      "name": "Entity Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the company/entity name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Fiscal Year",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the fiscal year of the balance sheet.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Reporting Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the reporting currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Auditor",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the auditing firm name.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Total Current Assets",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total current assets.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Total Non-Current Assets",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total non-current/fixed assets.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Total Assets",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total assets.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Total Current Liabilities",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total current liabilities.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Total Non-Current Liabilities",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total long-term liabilities.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Total Liabilities",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total liabilities.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Total Equity",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total shareholders' equity.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Line Items",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each balance sheet line: category, item, current year, prior year.",
+      "roleAccess": "Manager (Level 3)",
+      "columns": [
+        {
+          "name": "Category",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Item",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Current Year",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Prior Year",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Statement File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the audited balance sheet.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

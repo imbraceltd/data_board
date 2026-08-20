@@ -1,0 +1,93 @@
+{
+  "pillar": "General Operations",
+  "name": "Packing Slip / Delivery Note",
+  "objective": "Parse delivered item quantities, package counts, tracking serials, and receiving stamps.",
+  "attributes": [
+    {
+      "name": "Delivery Note Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the delivery note / packing slip number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Supplier",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the supplier/sender name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Recipient",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the recipient/consignee name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Related PO Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the related purchase order number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Delivery Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the delivery date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Tracking / Serial Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the tracking or shipment serial number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Package Count",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the total number of packages/cartons.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Weight",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the total shipment weight.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Delivered Items",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each delivered item: description, ordered qty, delivered qty.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Ordered Qty",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Delivered Qty",
+          "aiLogic": "Number"
+        }
+      ]
+    },
+    {
+      "name": "Carrier",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the carrier/courier name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Received By",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the name of the person who signed for receipt.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Delivery Note File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the packing slip/delivery note.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

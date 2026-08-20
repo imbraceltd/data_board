@@ -1,0 +1,115 @@
+{
+  "pillar": "Human Resources",
+  "name": "Candidate Resume / CV",
+  "objective": "Extract career history timelines, education levels, core skill matrices, and contact parameters.",
+  "attributes": [
+    {
+      "name": "Candidate Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the candidate's full name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Email",
+      "aiLogic": "Email",
+      "extractionPrompt": "Extract the candidate's email address.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Phone",
+      "aiLogic": "Phone",
+      "extractionPrompt": "Extract the candidate's phone number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Location",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the candidate's city/country of residence.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Current / Most Recent Title",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the most recent job title.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Years of Experience",
+      "aiLogic": "Number",
+      "extractionPrompt": "Estimate total years of professional experience.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Work History",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each role: company, title, start date, end date.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Company",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Title",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Start Date",
+          "aiLogic": "Date"
+        },
+        {
+          "name": "End Date",
+          "aiLogic": "Date"
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each qualification: institution, degree, field, year.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Institution",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Degree",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Field",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Year",
+          "aiLogic": "ShortText"
+        }
+      ]
+    },
+    {
+      "name": "Highest Education Level",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify highest education (High School, Bachelor, Master, PhD, Other).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Core Skills",
+      "aiLogic": "MultipleSelection",
+      "extractionPrompt": "Extract the candidate's core skills as tags.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Languages",
+      "aiLogic": "MultipleSelection",
+      "extractionPrompt": "Extract spoken/written languages.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Resume File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the original resume/CV file.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "pillar": "Finance & Accounting",
+  "name": "Corporate Income / P&L Statement",
+  "objective": "Extract rolling revenue tiers, operating margins, EBITDA variables, and net profit performance.",
+  "attributes": [
+    {
+      "name": "Entity Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the company/entity name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Reporting Period",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the reporting period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Reporting Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the reporting currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Revenue",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total revenue / turnover.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Cost of Goods Sold",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract COGS / cost of revenue.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Gross Profit",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract gross profit.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Operating Expenses",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total operating expenses.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Operating Income",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract operating income / EBIT.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "EBITDA",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract EBITDA.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Net Profit",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract net profit / net income.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Operating Margin %",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the operating margin percentage.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Statement File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the P&L statement.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

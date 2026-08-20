@@ -1,0 +1,79 @@
+{
+  "pillar": "G&A",
+  "name": "Mutual Non-Disclosure Agreement (MNDA)",
+  "objective": "Extract two-way confidentiality terms, active windows, and governing laws.",
+  "attributes": [
+    {
+      "name": "Agreement Title",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the title/heading of the agreement (e.g. 'Mutual Non-Disclosure Agreement').",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Disclosing Party A",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the full legal name of the first party.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Disclosing Party B",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the full legal name of the second party.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Effective Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date the agreement becomes effective.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Term / Duration",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the duration the agreement remains in force (e.g. '2 years').",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Confidentiality Period",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract how long confidentiality obligations survive after termination.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Definition of Confidential Information",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise what the agreement defines as Confidential Information.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Permitted Use",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract the permitted purpose for which confidential information may be used.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Governing Law",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the governing law / jurisdiction clause.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Mutual or One-Way",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify whether obligations are mutual (two-way) or one-way.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Signatory Names",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract the names and titles of all signatories.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Signature Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the date(s) the agreement was signed.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

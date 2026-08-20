@@ -1,0 +1,103 @@
+{
+  "pillar": "Sales & Customers",
+  "name": "Client Purchase Order (PO)",
+  "objective": "Capture inbound client order line items, quantity demands, unit prices, billing entities, and payment terms.",
+  "attributes": [
+    {
+      "name": "PO Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the purchase order number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Client / Buyer",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the client/buyer entity name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Billing Entity",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the bill-to entity.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Ship To",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract the ship-to/delivery address.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "PO Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the purchase order date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Requested Delivery Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the requested delivery date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Line Items",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each ordered line: description, quantity, unit price, amount.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Quantity",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Unit Price",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Amount",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Subtotal",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the order subtotal.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Tax",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the tax amount.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Order Value",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total PO value.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the order currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Payment Terms",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the payment terms.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "PO File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the original PO document.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

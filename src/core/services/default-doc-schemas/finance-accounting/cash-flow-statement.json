@@ -1,0 +1,79 @@
+{
+  "pillar": "Finance & Accounting",
+  "name": "Cash Flow Statement",
+  "objective": "Track operating cash loops, investing outflows, financing balances, and free cash metrics.",
+  "attributes": [
+    {
+      "name": "Entity Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the company/entity name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Reporting Period",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the reporting period.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Reporting Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the reporting currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Cash from Operations",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract net cash from operating activities.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Cash from Investing",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract net cash from investing activities.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Cash from Financing",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract net cash from financing activities.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Net Change in Cash",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the net change in cash.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Opening Cash Balance",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the opening cash balance.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Closing Cash Balance",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the closing cash balance.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Free Cash Flow",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract or compute free cash flow.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Capital Expenditure",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract capital expenditure (CapEx).",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Statement File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the cash flow statement.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

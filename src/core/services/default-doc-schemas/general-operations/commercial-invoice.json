@@ -1,0 +1,109 @@
+{
+  "pillar": "General Operations",
+  "name": "Commercial Invoice",
+  "objective": "Extract unformatted multi-line itemized costs, tax fields, currencies, and supplier bank details.",
+  "attributes": [
+    {
+      "name": "Invoice Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the commercial invoice number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Supplier / Exporter",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the supplier/exporter name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Buyer / Importer",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the buyer/importer name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Invoice Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the invoice date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Country of Origin",
+      "aiLogic": "Country",
+      "extractionPrompt": "Extract the country of origin of goods.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Country of Destination",
+      "aiLogic": "Country",
+      "extractionPrompt": "Extract the destination country.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Line Items",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each line: description, quantity, unit price, amount.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Quantity",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Unit Price",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Amount",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Subtotal",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the subtotal.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Tax / Duties",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the tax/duties amount.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Amount",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total invoice amount.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the invoice currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Incoterms",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the Incoterms (e.g. FOB, CIF).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Supplier Bank Details",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract the supplier remittance/bank details.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Invoice File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the commercial invoice.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "pillar": "IT & Security",
+  "name": "Cloud Infrastructure Bill (AWS/Azure)",
+  "objective": "Extract complex nested multi-line server runtime costs, database storage fees, data egress charges, and regional tax splits.",
+  "attributes": [
+    {
+      "name": "Provider",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify the cloud provider (AWS, Azure, GCP, Other).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Account / Subscription ID",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the billing account or subscription identifier.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Billing Period",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the billing period (e.g. 'Jun 2026').",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Invoice Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the invoice / statement date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Service Charges",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each service line: service name, region, usage quantity, unit, cost.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Service",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Region",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Usage",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Cost",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Compute Costs",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total compute/server runtime costs.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Storage Costs",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total database/storage fees.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Data Egress Charges",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract total data transfer / egress charges.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Regional Tax",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the regional tax amount.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Total Amount Due",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total amount due.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the billing currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Invoice File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the original billing PDF.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

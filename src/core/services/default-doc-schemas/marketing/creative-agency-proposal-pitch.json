@@ -1,0 +1,99 @@
+{
+  "pillar": "Marketing",
+  "name": "Creative Agency Proposal / Pitch",
+  "objective": "Extract agency strategy frameworks, proposed campaign concepts, asset delivery timelines, and overall project costs.",
+  "attributes": [
+    {
+      "name": "Agency Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the creative agency name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Proposal Title",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the proposal/pitch title.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Prepared For",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the client/brand the proposal is for.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Proposal Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the proposal date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Campaign Objective",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the campaign objective/strategy framework.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Proposed Concepts",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the proposed creative concepts.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Target Audience",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the defined target audience.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Channels",
+      "aiLogic": "MultipleSelection",
+      "extractionPrompt": "Extract the proposed marketing channels.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Deliverables & Timeline",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each deliverable: asset, description, delivery date.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Asset",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Delivery Date",
+          "aiLogic": "Date"
+        }
+      ]
+    },
+    {
+      "name": "Campaign Start Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the proposed campaign start date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Project Cost",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total proposed project cost.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the cost currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Proposal File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the proposal/pitch deck.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

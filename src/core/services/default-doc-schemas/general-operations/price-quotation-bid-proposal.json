@@ -1,0 +1,103 @@
+{
+  "pillar": "General Operations",
+  "name": "Price Quotation / Bid Proposal",
+  "objective": "Capture commercial rate sheets, volume discount structures, service lead times, and bid deadlines.",
+  "attributes": [
+    {
+      "name": "Quotation Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the quotation/bid reference number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Vendor",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the quoting vendor name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Prepared For",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the recipient/prospect name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Quotation Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the quotation date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Valid Until",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the quotation validity / bid deadline.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the quoted currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Line Items",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each quoted item: description, quantity, unit rate, amount.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Quantity",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Unit Price",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Amount",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Subtotal",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the subtotal.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Volume Discount Structure",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise any volume discount tiers.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Quoted Amount",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total quoted amount.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Service Lead Time",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the delivery/service lead time.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Payment Terms",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the payment terms.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Quotation File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the quotation/bid proposal.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

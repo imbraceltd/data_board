@@ -1,0 +1,85 @@
+{
+  "pillar": "Sales & Customers",
+  "name": "Request for Proposal (RFP)",
+  "objective": "Extract client project requirements, technical specifications, compliance mandates, and submission deadlines.",
+  "attributes": [
+    {
+      "name": "RFP Title",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the RFP title.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Issuing Organisation",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the issuing client/organisation.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "RFP Reference Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the RFP reference number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Issue Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the RFP issue date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Submission Deadline",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the proposal submission deadline.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Q&A Deadline",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the clarification/Q&A deadline.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Project Description",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the project requirements.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Technical Specifications",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the technical specifications/requirements.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Compliance Mandates",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise mandatory compliance requirements.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Estimated Budget",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the stated/estimated budget if given.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Evaluation Criteria",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the proposal evaluation criteria.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Primary Contact",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the named procurement contact.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "RFP Document",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the original RFP file.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

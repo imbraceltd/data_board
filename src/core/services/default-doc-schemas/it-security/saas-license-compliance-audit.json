@@ -1,0 +1,73 @@
+{
+  "pillar": "IT & Security",
+  "name": "SaaS License Compliance Audit",
+  "objective": "Parse incoming software publisher usage demands, deployed seat counts, unassigned licenses, and financial risk metrics.",
+  "attributes": [
+    {
+      "name": "Software Publisher",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the software publisher / vendor name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Product Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the audited product/software name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Audit Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the audit/report date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Licenses Purchased",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the number of licenses/seats purchased.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Licenses Deployed",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the number of deployed/used seats.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Unassigned Licenses",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the count of unassigned/unused licenses.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Over-Deployment Count",
+      "aiLogic": "Number",
+      "extractionPrompt": "Extract the number of seats over the entitlement, if any.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Compliance Status",
+      "aiLogic": "SingleSelection",
+      "extractionPrompt": "Classify status (Compliant, Over-Deployed, Under-Utilised).",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Financial Risk Exposure",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the estimated financial penalty/true-up exposure.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Remediation Deadline",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the deadline to remediate.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Auditor Notes",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the auditor findings.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "pillar": "Procurement",
+  "name": "Vendor RFQ Response / Quotation",
+  "objective": "Extract incoming supplier unit pricing tables, currency specs, volume discount breaks, and bid validity dates.",
+  "attributes": [
+    {
+      "name": "Supplier Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the supplier/vendor name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Quotation Reference",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the quotation reference number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "RFQ Reference",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the RFQ reference this responds to.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Quotation Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the quotation date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Bid Valid Until",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the bid validity expiry date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the quoted currency.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Pricing Table",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each quoted item: description, unit, unit price, MOQ, lead time.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Unit Price",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "MOQ",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Lead Time",
+          "aiLogic": "ShortText"
+        }
+      ]
+    },
+    {
+      "name": "Volume Discount Terms",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise any volume/quantity discount breaks.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Quoted Amount",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total quoted amount.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Payment Terms",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the payment terms offered.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Delivery Terms (Incoterms)",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the delivery/Incoterms.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Quotation File",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the supplier quotation.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

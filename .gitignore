@@ -1,0 +1,33 @@
+node_modules/
+dist/
+node_modules
+.DS_Store
+.tmp
+tmp
+dist
+npm-debug.log*
+lerna-debug.log
+google-generated-credentials.json
+_START_PACKAGE
+.vscode/
+.claude/
+.idea
+nodelinter.config.json
+# Ignore npm lock files since we use pnpm
+package-lock.json
+packages/*/package-lock.json
+.github
+# files containing secrets
+secrets.env
+secret.env
+*/ansible/local/.env
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+.env.bk
+.env2
+# logs
+logs/
+.migration-checkpoint.json

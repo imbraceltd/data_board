@@ -1,0 +1,103 @@
+{
+  "pillar": "G&A",
+  "name": "Vendor Invoices",
+  "objective": "Parse multi-line item operating expenses, tax parameters, and payment terms.",
+  "attributes": [
+    {
+      "name": "Invoice Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the invoice number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Vendor Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the vendor / supplier legal name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Vendor Tax ID",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the vendor tax / VAT registration number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Bill To",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the billed entity name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Invoice Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the invoice issue date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Due Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the payment due date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Line Items",
+      "aiLogic": "TableInTable",
+      "extractionPrompt": "Extract each invoice line item: description, quantity, unit price and line amount.",
+      "roleAccess": "Officer (Level 1)",
+      "columns": [
+        {
+          "name": "Description",
+          "aiLogic": "ShortText"
+        },
+        {
+          "name": "Quantity",
+          "aiLogic": "Number"
+        },
+        {
+          "name": "Unit Price",
+          "aiLogic": "Currency"
+        },
+        {
+          "name": "Amount",
+          "aiLogic": "Currency"
+        }
+      ]
+    },
+    {
+      "name": "Subtotal",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the pre-tax subtotal.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Tax Amount",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the total tax/VAT amount.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Total Amount Due",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the grand total amount due.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Currency",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the invoice currency code (e.g. USD, HKD).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Payment Terms",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the payment terms (e.g. Net 30).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Supporting Document",
+      "aiLogic": "Attachment",
+      "extractionPrompt": "Attach the original invoice file.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}

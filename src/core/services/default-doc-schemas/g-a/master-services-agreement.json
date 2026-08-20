@@ -1,0 +1,85 @@
+{
+  "pillar": "G&A",
+  "name": "Master Services Agreement (MSA)",
+  "objective": "Parse overarching commercial frameworks, liability caps, and termination rules.",
+  "attributes": [
+    {
+      "name": "Agreement Title",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the agreement title/heading.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Service Provider",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the legal name of the service provider party.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Client / Customer",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the legal name of the client party.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Effective Date",
+      "aiLogic": "Date",
+      "extractionPrompt": "Extract the agreement effective date.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Initial Term",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the initial term/duration of the agreement.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Renewal Terms",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise auto-renewal and extension provisions.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Scope of Services",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the overarching scope of services covered.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Liability Cap",
+      "aiLogic": "Currency",
+      "extractionPrompt": "Extract the limitation of liability cap amount.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Indemnification Terms",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the indemnification obligations.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Payment Terms",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the payment terms (e.g. Net 30).",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Termination Clause",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Summarise the termination rights and notice periods.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Governing Law",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the governing law / jurisdiction.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Signatories",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract signatory names and titles for both parties.",
+      "roleAccess": "Manager (Level 3)"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "pillar": "Procurement",
+  "name": "Vendor Registration Form",
+  "objective": "Capture inbound vendor legal entities, corporate tax IDs, physical operating nodes, and bank payout parameters.",
+  "attributes": [
+    {
+      "name": "Vendor Legal Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the vendor's legal entity name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Trading Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the vendor trading/brand name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Corporate Tax ID",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the corporate tax / VAT ID.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Business Registration Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the business registration number.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Country of Incorporation",
+      "aiLogic": "Country",
+      "extractionPrompt": "Extract the country of incorporation.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Registered Address",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract the registered office address.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Operating Address",
+      "aiLogic": "LongText",
+      "extractionPrompt": "Extract the physical operating/warehouse address.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Primary Contact Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the primary contact name.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Contact Email",
+      "aiLogic": "Email",
+      "extractionPrompt": "Extract the contact email.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Contact Phone",
+      "aiLogic": "Phone",
+      "extractionPrompt": "Extract the contact phone.",
+      "roleAccess": "Officer (Level 1)"
+    },
+    {
+      "name": "Bank Name",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the payout bank name.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Bank Account Number",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the bank account / IBAN.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "SWIFT / Routing",
+      "aiLogic": "ShortText",
+      "extractionPrompt": "Extract the SWIFT/BIC or routing number.",
+      "roleAccess": "Manager (Level 3)"
+    },
+    {
+      "name": "Category of Goods/Services",
+      "aiLogic": "MultipleSelection",
+      "extractionPrompt": "Classify the vendor's supplied categories.",
+      "roleAccess": "Officer (Level 1)"
+    }
+  ]
+}
